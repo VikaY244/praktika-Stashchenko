@@ -1,0 +1,5 @@
+import math
+x=int (input("Введите переменную x:"))
+o=int (input("Введите переменную o:"))
+z = ((9*math.pi*o+10*math.cos(x)))/(math.sqrt(o)-math.fabs(math.sin(o)))*math.pow(math.e,x)
+print("z={0:.2f}".format(z))
