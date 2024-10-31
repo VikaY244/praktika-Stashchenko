@@ -1,0 +1,4 @@
+arr = [-16, 0, -44, 2, 1, 0, -10, 5, -12, -8, 3, -34, 17, 22]
+for i in range(len(arr)-1):
+    if arr[i] < 0 and arr[i+1] < 0:
+        print(arr[i], arr[i+1])
