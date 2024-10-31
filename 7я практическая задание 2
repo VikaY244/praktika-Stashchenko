@@ -1,0 +1,5 @@
+massiv = [1,1,5,6,5,7,6,4,5,3,4,0]
+for l in reversed(range(len(massiv)-1)):
+   if massiv[l] in massiv[l+1:]:
+       lst.pop(l)
+print(massiv)
