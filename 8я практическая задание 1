@@ -1,0 +1,24 @@
+# -*- coding: utf8 -*-
+A = int(input("Введите (A): "))
+B = int(input("Введите (B): "))
+C = int(input("Введите (C): "))
+D = int(input("Введите (D): "))
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+def subtract_fractions(A, B, C, D):
+    common_denominator = B * D
+    numerator1 = A * D
+    numerator2 = C * B
+    result_numerator = numerator1 - numerator2
+    if result_numerator < 0:
+        return "Результат отрицательный или равен нулю"
+    elif result_numerator == 0:
+        return "0/1" 
+    gcd_value = gcd(result_numerator, common_denominator)
+    result_numerator //= gcd_value
+    result_denominator = common_denominator // gcd_value
+    return "{result_numerator}/{result_denominator}"
+result = subtract_fractions(A, B, C, D)
+print("Результат: ", result)
