@@ -1,0 +1,24 @@
+def sort_matrix_rows(matrix):
+
+    for row in matrix:
+        row.sort() 
+    return matrix
+
+
+n = int(input("Введите количество строк:"))
+m = int(input("Введите количество столбцов:"))
+
+matrix = []
+print("Введите элементы матрицы по строкам:")
+for i in range(n):
+    row = list(map(int, input("Строка {i + 1}: ").split()))
+    if len(row) != m:
+        print("Ошибка: ожидается больше элементов, получено мало данных.")
+        break
+    matrix.append(row)
+
+sorted_matrix = sort_matrix_rows(matrix)
+
+print("Отсортированная матрица:")
+for row in sorted_matrix:
+    print(" ".join(map(str, row)))
