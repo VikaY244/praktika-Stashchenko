@@ -1,0 +1,9 @@
+def find_divisors(c):
+    divisors = []
+    for i in range(1, c + 1):
+        if c % i == 0:
+            divisors.append(i)
+    return divisors
+c = int(input("Введите число: "))
+divisors = find_divisors(c)
+print(" ".join(map(str, divisors)))
