@@ -1,0 +1,44 @@
+#coding: utf-8
+
+def read_matrix_from_file(filename):
+    with open(filename, 'r') as file:
+        n, m = map(int, file.readline().strip().split())
+        matrix = []
+        for _ in range(n):
+            row = list(map(int, file.readline().strip().split()))
+            matrix.append(row)
+    return matrix
+
+def write_matrix_to_file(matrix, filename):
+    with open(filename, 'w') as file:
+        n = len(matrix)
+        m = len(matrix[0]) if n > 0 else 0
+        file.write("{} {}\n".format(n, m))
+        for row in matrix:
+            file.write(" ".join(map(str, row)) + "\n")
+
+def process_matrix(matrix):
+    new_matrix = [row[:] for row in matrix]  
+    for i in range(len(matrix)):
+        min_index = new_matrix[i].index(min(new_matrix[i])) 
+        min_value = new_matrix[i][min_index]
+        
+        if min_value % 2 == 0:
+            new_matrix[i][min_index] = 0  
+        else:
+            new_matrix[i][min_index] = 1  
+    return new_matrix
+
+input_filename = 'Stashchenko_Y-244_vvod.txt' 
+
+matrix = read_matrix_from_file(input_filename)
+print("Исходная матрица:")
+print(matrix)
+
+
+new_matrix = process_matrix(matrix)
+print("\nНовая матрица:")
+print(new_matrix)
+
+
+write_matrix_to_file(new_matrix, input_filename)
