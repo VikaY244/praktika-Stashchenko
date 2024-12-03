@@ -1,0 +1,20 @@
+def power(x, n):
+    if n == 0:  
+        return 1
+    else:  
+        return x * power(x, n - 1)
+def factorial(n):
+    if n == 0 or n == 1: 
+        return 1
+    else: 
+        return n * factorial(n - 1)
+x = int(input("Введите натуральное число X: "))
+n = int(input("Введите натуральное число N: "))
+result_power = power(x, n)
+result_factorial = factorial(n)
+print(f"{x} в степени {n} равно {result_power}")
+print(f"Факториал {n} равен {result_factorial}")
+
+вывод программы:
+1 в степени 6 равно 1
+Факториал 6 равен 720
