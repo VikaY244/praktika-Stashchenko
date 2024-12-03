@@ -1,0 +1,20 @@
+def find_second_maximum():
+    max_num = float('-inf') 
+    second_max_num = float('-inf')  
+    while True:
+        num = int(input("Введите натуральное число. Ноль закончит последовательность "))  
+        if num == 0:  
+            break
+        if num > max_num:  
+            second_max_num = max_num  
+            max_num = num  
+        elif num > second_max_num and num != max_num:  
+            second_max_num = num  
+    if second_max_num == float('-inf'):
+        print("Нет второго по величине числа.")
+    else:
+        print("Второе по величине число:", second_max_num)
+find_second_maximum()
+
+вывод программы:
+Второе по величине число: 6
